@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Reac applocation for drywall calculation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Demo](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
