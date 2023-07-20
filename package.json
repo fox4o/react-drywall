@@ -2,7 +2,7 @@
   "name": "react-drywall",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://fox4o.github.io/my-budget",
+  "homepage": "http://fox4o.github.io/react-drywall",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
