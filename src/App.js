@@ -7,7 +7,7 @@ import Calc from "./pages/Calc";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/react-drywall'>
       <Header />
       <main>
         <Routes>
