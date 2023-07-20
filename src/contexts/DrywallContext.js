@@ -37,11 +37,11 @@ export const d112_gkb_av = {
   sfl: 2,
 };
 export const d112_gkb_do = {
-  mpcw: 3,
-  mpuw: 3,
-  mpud: 3,
+  mpcw: 0,
+  mpuw: 0,
+  mpud: 0.6,
   mpcd: 3,
-  ul: 0,
+  ul: 0.8,
   pd: 0,
   md: 0,
   aocd: 0,
