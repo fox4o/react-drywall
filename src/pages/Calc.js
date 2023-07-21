@@ -52,18 +52,18 @@ const Calc = () => {
       <Container className="justify-content-center">
         <Row>
           <Col
-            className="col-8 bg-success text-white d-flex justify-content-end"
+            className="col-6 bg-success text-white d-flex justify-content-end"
           >
             {__t("material")} :
           </Col>
           <Col
-            className="col-2 bg-success text-white d-flex justify-content-center"
+            className="col-3 bg-success text-white d-flex justify-content-center"
           >
             {__t("qty")}
           </Col>
           <Col
 
-            className="col-2 bg-success text-white d-flex justify-content-center"
+            className="col-3 bg-success text-white d-flex justify-content-center"
           >
             +{settings.percent}%
           </Col>
@@ -71,16 +71,16 @@ const Calc = () => {
         {Object.keys(result).map((material) => {
           return (
             <Row key={material}>
-              <Col className="col-8 d-flex justify-content-end">
+              <Col className="col-6 d-flex justify-content-end">
                 {__t(material)} :
               </Col>
               <Col
-                className="col-2 bg-info text-bg-info d-flex justify-content-center"
+                className="col-3 bg-info text-bg-info d-flex justify-content-center"
               >
                 {result[material]} {__t(material + "_s")}
               </Col>
               <Col
-                className="col-2 bg-info text-bg-info d-flex justify-content-center"
+                className="col-3 bg-info text-bg-info d-flex justify-content-center"
               >
                 {dw["number_materials"].includes(material)?Math.round(Math.round(result[material]*(1+settings.percent/100)*100)/100):Math.round(result[material]*(1+settings.percent/100)*100)/100} {__t(material + "_s")}
               </Col>
