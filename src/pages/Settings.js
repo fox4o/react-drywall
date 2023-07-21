@@ -7,14 +7,17 @@ const Settings = () => {
   const [__t] = useTranslation();
 
   const handleClick = () => {
+    /*
     setSettings((prevSettings) => {
       return { ...prevSettings, pUD: 10 };
     });
+    */
+   localStorage.clear();
   };
 
   return (
     <div>
-      <button onClick={handleClick}>Change settings</button>
+      <button onClick={handleClick}>Clear local storage</button>
       Settings page
       <form>form</form>
     </div>

@@ -52,44 +52,35 @@ const Calc = () => {
       <Container className="justify-content-center">
         <Row>
           <Col
-            xs="6"
-            sm="4"
-            className="bg-success text-white d-flex justify-content-end"
+            className="col-8 bg-success text-white d-flex justify-content-end"
           >
-            <h4>{__t("material")} :</h4>
+            {__t("material")} :
           </Col>
           <Col
-            xs="3"
-            sm="4"
-            className="bg-success text-white d-flex justify-content-center"
+            className="col-2 bg-success text-white d-flex justify-content-center"
           >
-            <h4>{__t("qty")}</h4>
+            {__t("qty")}
           </Col>
           <Col
-            xs="3"
-            sm="4"
-            className="bg-success text-white d-flex justify-content-center"
+
+            className="col-2 bg-success text-white d-flex justify-content-center"
           >
-            <h4>+{settings.percent}%</h4>
+            +{settings.percent}%
           </Col>
         </Row>
         {Object.keys(result).map((material) => {
           return (
             <Row key={material}>
-              <Col xs="6" sm="4" className="d-flex justify-content-end">
+              <Col className="col-8 d-flex justify-content-end">
                 {__t(material)} :
               </Col>
               <Col
-                xs="3"
-                sm="4"
-                className="bg-info text-bg-info d-flex justify-content-center"
+                className="col-2 bg-info text-bg-info d-flex justify-content-center"
               >
                 {result[material]} {__t(material + "_s")}
               </Col>
               <Col
-                xs="3"
-                sm="4"
-                className="bg-info text-bg-info d-flex justify-content-center"
+                className="col-2 bg-info text-bg-info d-flex justify-content-center"
               >
                 {dw["number_materials"].includes(material)?Math.round(Math.round(result[material]*(1+settings.percent/100)*100)/100):Math.round(result[material]*(1+settings.percent/100)*100)/100} {__t(material + "_s")}
               </Col>
