@@ -6,6 +6,10 @@ const Drywall = createContext();
 
 const AppContext = ({ children }) => {
   const dwSettings = {
+    // настройки на изчисленията
+    percent:10, // + разход
+
+    // материали
     mpcw: 3,
     mpuw: 3,
     mpud: 3,
@@ -37,7 +41,7 @@ const AppContext = ({ children }) => {
     for (let key in system) {
       if (parseFloat(system[key]) > 0) {
         materials[key] = Math.round(mq * system[key] * 100) / 100; // js math bug fix
-        // ако е бройка трябва да се закръгли
+        // ако е бройка - трябва да се закръгли
         if (number_materials.includes(key))
           materials[key] = Math.round(materials[key]);
       }

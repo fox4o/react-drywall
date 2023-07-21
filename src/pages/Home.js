@@ -16,6 +16,8 @@ const Home = () => {
           <SystemCard system={"d112_gkb_do"} />
           <SystemCard system={"w111"} />
           <SystemCard system={"w112_2gkb"} />
+          <SystemCard system={"w115_2gkb"} />
+          <SystemCard system={"w115_2gkb_gkb"} />
         </Row>
       </Container>
     </>

@@ -8,6 +8,7 @@ import { Col, Container, Row, Image, Form } from "react-bootstrap";
 const Calc = () => {
   const { settings, setSettings, calc_dw_materials } = useDrywall();
   const [result, setResult] = useState({});
+  const [resultPercent, setResultPercent] = useState({});
   const [mq, setMq] = useState(0);
   const { system } = useParams();
   const [__t] = useTranslation();
@@ -15,6 +16,7 @@ const Calc = () => {
   useEffect(() => {
     setResult(calc_dw_materials(mq, dw[system]));
   }, [mq]);
+
   const handleOnCange = (e) => {
     isNaN(parseFloat(e.target.value)) // is empty string
       ? setMq("")
@@ -35,7 +37,7 @@ const Calc = () => {
             sm="6"
             className="d-flex justify-content-end"
           >
-            {__t("size")}
+            <h4>{__t("size")}</h4>
           </Form.Label>
           <Col xs="4" sm="6">
             <Form.Control
@@ -48,14 +50,48 @@ const Calc = () => {
         </Form.Group>
       </Container>
       <Container className="justify-content-center">
+        <Row>
+          <Col
+            xs="6"
+            sm="4"
+            className="bg-success text-white d-flex justify-content-end"
+          >
+            <h4>{__t("material")} :</h4>
+          </Col>
+          <Col
+            xs="3"
+            sm="4"
+            className="bg-success text-white d-flex justify-content-center"
+          >
+            <h4>{__t("qty")}</h4>
+          </Col>
+          <Col
+            xs="3"
+            sm="4"
+            className="bg-success text-white d-flex justify-content-center"
+          >
+            <h4>+{settings.percent}%</h4>
+          </Col>
+        </Row>
         {Object.keys(result).map((material) => {
           return (
             <Row key={material}>
-              <Col xs="8" sm="6" className="d-flex justify-content-end">
+              <Col xs="6" sm="4" className="d-flex justify-content-end">
                 {__t(material)} :
               </Col>
-              <Col xs="4" sm="6" className="bg-info text-bg-info">
+              <Col
+                xs="3"
+                sm="4"
+                className="bg-info text-bg-info d-flex justify-content-center"
+              >
                 {result[material]} {__t(material + "_s")}
+              </Col>
+              <Col
+                xs="3"
+                sm="4"
+                className="bg-info text-bg-info d-flex justify-content-center"
+              >
+                {dw["number_materials"].includes(material)?Math.round(Math.round(result[material]*(1+settings.percent/100)*100)/100):Math.round(result[material]*(1+settings.percent/100)*100)/100} {__t(material + "_s")}
               </Col>
             </Row>
           );
