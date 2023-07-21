@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-drywall/static/css/main.c5ca4f02.css",
-    "main.js": "/react-drywall/static/js/main.25aa01a0.js",
+    "main.js": "/react-drywall/static/js/main.b8123a9a.js",
     "static/js/901.da5abab8.chunk.js": "/react-drywall/static/js/901.da5abab8.chunk.js",
     "index.html": "/react-drywall/index.html",
     "main.c5ca4f02.css.map": "/react-drywall/static/css/main.c5ca4f02.css.map",
-    "main.25aa01a0.js.map": "/react-drywall/static/js/main.25aa01a0.js.map"
+    "main.b8123a9a.js.map": "/react-drywall/static/js/main.b8123a9a.js.map"
   },
   "entrypoints": [
     "static/css/main.c5ca4f02.css",
-    "static/js/main.25aa01a0.js"
+    "static/js/main.b8123a9a.js"
   ]
 }
