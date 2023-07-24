@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Container className="mt-2">
-        <h2>{__t("systems")}</h2>
+        <h3>{__t("systems")}</h3>
       </Container>
       <Container className="mt-2">
         <Row xs={2} md={3} className="g-4 mb-1">

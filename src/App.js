@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -7,7 +7,7 @@ import Calc from "./pages/Calc";
 
 function App() {
   return (
-    <BrowserRouter basename='/react-drywall'>
+    <HashRouter >
       <Header />
       <main>
         <Routes>
@@ -16,7 +16,7 @@ function App() {
           <Route path="settings" element={<Settings />} />
         </Routes>
       </main>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
