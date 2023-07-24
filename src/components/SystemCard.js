@@ -10,7 +10,7 @@ const SystemCard = ({ system }) => {
   return (
     <Col key={system}>
       <Link to={`calc/${system}`}>
-        <Card>
+        <Card className="h-100">
           <Card.Img variant="top" src={process.env.PUBLIC_URL +`/img/${system}.jpg`} />
           <Card.Body>
             <Card.Text>{__t(system)}</Card.Text>
