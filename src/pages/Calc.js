@@ -40,7 +40,7 @@ const Calc = () => {
       ? setMq("")
       : setMq(parseFloat(e.target.value));
   };
-console.log(resultPercent);
+
   return (
     <>
       <Container className="mt-2">
