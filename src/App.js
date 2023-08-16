@@ -13,7 +13,6 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="calc/:system" element={<Calc />} />
-          <Route path="settings" element={<Settings />} />
         </Routes>
       </main>
     </HashRouter>

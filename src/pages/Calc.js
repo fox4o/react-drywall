@@ -1,13 +1,16 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+
 import { useDrywall } from "../contexts/AppContext";
 import * as dw from "../contexts/DrywallContext";
-import { useEffect, useRef, useState } from "react";
+
 import useTranslation from "../hooks/useTranslations";
 import { Col, Container, Row, Image, Form } from "react-bootstrap";
 
 const Calc = () => {
-  const { settings, setSettings, calc_dw_materials } = useDrywall();
+  const { calc_dw_materials } = useDrywall();
   const [result, setResult] = useState([]);
+  const [percent, setPercent] = useState(10);
   const [resultPercent, setResultPercent] = useState([]);
   const [mq, setMq] = useState(0);
   const { system } = useParams();
@@ -25,15 +28,15 @@ const Calc = () => {
         dw["number_materials"].includes(material)
         ? res[material]=(Math.round(
             Math.round(
-              result[material] * (1 + settings.percent / 100) * 100
+              result[material] * (1 + percent / 100) * 100
             ) / 100
           ))
         : res[material]=(Math.round(
-            result[material] * (1 + settings.percent / 100) * 100
+            result[material] * (1 + percent / 100) * 100
           ) / 100);
     });
     setResultPercent(res);
-  }, [result]);
+  }, [result, percent]);
 
   const handleOnCange = (e) => {
     isNaN(parseFloat(e.target.value)) // is empty string
@@ -75,7 +78,14 @@ const Calc = () => {
             {__t("qty")}
           </Col>
           <Col className="border col-3 bg-success text-white d-flex justify-content-center">
-            +{settings.percent}%
+            + <Form.Control
+            className="w-75"
+            size="sm"
+              type="text"
+              step={0.01}
+              value={percent}
+              onChange={e=>setPercent(e.target.value)}
+            /> %
           </Col>
         </Row>
         {Object.keys(result).map((material) => {

@@ -13,7 +13,7 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              <NavLink to="settings" className="btn btn-outline-primary">Settings</NavLink>
+              <NavLink to="lang" className="btn btn-outline-primary">Lang</NavLink>
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
